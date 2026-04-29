@@ -38,9 +38,10 @@ if (!isset($_SESSION['user'])) {
         </div>
         <ul tabindex="0"
             class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#15803d] rounded-box w-52 text-white font-semibold">
-          <li><a id="">About</a></li>
-          <li><a>Gallery</a></li>
-          <li><a>Plant a Tree</a></li>
+   <li><a href="/plant_system/about.php">About</a></li>
+          <li><a href ="/plant_system/blog.php">Blog</a></li>
+            <li><a href ="/plant_system/success_story.php">success story</a></li>
+          
         </ul>
       </div>
 
@@ -53,15 +54,15 @@ if (!isset($_SESSION['user'])) {
     <!-- Center (Visible on Large Screens) -->
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1 text-white font-semibold">
-        <li><a>About</a></li>
-        <li><a>Gallery</a></li>
-        <li><a>Plant a Tree</a></li>
+         <li><a href="/plant_system/about.php">About</a></li>
+       <li><a href ="/plant_system/blog.php">Blog</a></li>
+       <li><a href ="/plant_system/success_story.php">success story</a></li>
       </ul>
     </div>
     <div class="navbar-end">
-      <button class="btn bg-[#facc15] rounded-full text-[#15803d] font-semibold">
-        Plant a Tree
-      </button>
+      <a href="logout.php" class="btn bg-[#facc15] rounded-full text-[#15803d] font-semibold inline-block text-center px-4 py-2">
+    Log out
+</a>
     </div>
   </div>
 
@@ -79,9 +80,7 @@ if (!isset($_SESSION['user'])) {
       <p class="text-gray-700 mb-6 font-semibold">
         Join our mission to plant 1 million trees and make the Earth greener for future generations.
       </p>
-      <button class="btn bg-[#facc15] text-[#15803d] font-semibold rounded-full px-6">
-        Get Involved
-      </button>
+   
     </div>
     <div class="hidden lg:block w-1/4 -ml-12 ">   
       <img src="hero-leaf2.png" alt="Right leaf" class="w-full h-auto">
@@ -120,7 +119,7 @@ if (!isset($_SESSION['user'])) {
 <section class="bg-[#f0fdf4] mx-auto w-11/12" id="about">
     <h1 class= "text-center md:text-left 
            text-2xl sm:text-3xl lg:text-4xl 
-           font-bold m-6 sm:m-8 lg:m-10 flex justify-center items-center">About the Campaign</h1>
+           font-bold m-6 sm:m-8 lg:m-10 flex justify-center items-center"> Campaign Information</h1>
     <div class="flex mx-auto justify-center items-center w-11/12 gap-10 p-5 flex-col md:flex-row">
         <div>
             <img src="about.png" alt="">
@@ -186,15 +185,17 @@ if (!isset($_SESSION['user'])) {
   </datalist>
  
 
-  
-  <button class="btn btn-primary bg-[#facc15] text-[#166534]">Donate Now</button>
+  <button onclick="showAlert()" class="btn btn-primary bg-[#facc15] text-[#166534]">
+  Donate Now
+</button>
+
 </fieldset>
     </div>
 
    
 </footer>
  <div class="bg-[#14532d] flex justify-center items-center h-16 text-[white]">
-<p>© 2025 Green Earth. All Rights Reserved.</p>
+<p>© 2026 Green Earth. All Rights Reserved.</p>
     </div>
     <script src="index.js"></script>
 </body>
@@ -374,7 +375,9 @@ function clearActive() {
   const allBtns = document.querySelectorAll(".category-btn");
   allBtns.forEach(b => b.classList.remove("bg-green-600", "text-white"));
 }
-
+function showAlert() {
+  alert("Thank you for your donation!");
+}
 
 categories();
 allplants(); 
